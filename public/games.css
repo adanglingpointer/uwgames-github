@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: #FF9933;
+    color: #FFFFFF;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  .navigation {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navigation li {
+    margin: 0 20px;
+  }
+  
+  .navigation a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  
+  .main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .game-categories {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .game-categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .game-categories li {
+    margin: 0 10px;
+  }
+  
+  .game-categories a {
+    font-size: 14px;
+    color: #707070;
+    text-decoration: none;
+  }
+  
+  .featured-games {
+    margin-bottom: 20px;
+  }
+  
+  .featured-games h2 {
+    text-align: center;
+  }
+  
+  .game-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .game-box {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .game-box img {
+    width: 80%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .game-box p {
+    font-size: 16px;
+    color: #707070;
+  }
+  
+  .all-games {
+    margin-bottom: 20px;
+  }
+  
+  .all-games h2 {
+    text-align: center;
+  }
+  
+  .game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .game-card {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .game-card img {
+    width: 80%;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .game-card p {
+    font-size: 16px;
+    color: #707070;
+  }
+  
+  .footer {
+    background-color: #E1E1E1;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
