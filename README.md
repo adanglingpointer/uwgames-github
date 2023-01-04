@@ -11,6 +11,10 @@ The latest version of this app is always live at [https://unlimitedweb.us/](http
 
 ## Update Log
 
+- v1.0.2
+- [x] mobile friendly
+- [x] highly responsive layout
+
 - v1.0.1
 - [x] cleaner code
 - [x] passing props between parents, children, and to siblings (ie. coins)

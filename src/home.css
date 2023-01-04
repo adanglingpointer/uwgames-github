@@ -57,76 +57,6 @@ justify-content: center;
 padding: 0 20px;
 }
 
-.login-container {
-  width: 30%;
-  margin: 0 auto;
-  background-color: #FFFFFF;
-  border: 2px solid #E1E1E1;
-  border-radius: 5px;
-  padding: 20px;
-  margin-top: 17vh;
-}
-
-.login-container h1 {
-  text-align: center;
-  color: #707070;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-label {
-  font-size: 16px;
-  color: #707070;
-  margin-bottom: 5px;
-}
-
-input[type="text"], input[type="password"] {
-  width: 80%;
-  height: 35px;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin-bottom: 20px;
-}
-
-input[type="submit"] {
-  width: 100px;
-  height: 35px;
-  background-color: #FF9933;
-  border: none;
-  border-radius: 5px;
-  color: #FFFFFF;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 6px;
-}
-
-input[type="submit"]:hover {
-  background-color: #FFB266;
-}
-
-.nav-link {
-  cursor: pointer;
-}
-
-.flex-me {
-  display: flex;
-  width: 70%;
-  justify-content: space-between;
-}
-
-@media (max-width: 700px) {
-  .login-container div {
-    flex-direction: column;
-  }
-}
-
-
-
 .main-content {
   max-width: 1000px;
   margin: 0 auto;
@@ -228,4 +158,52 @@ input[type="submit"]:hover {
   background-color:burlywood;
   width: 125px;
   text-align: right;
+}
+
+nav select {
+  display: none;
+  font-size: 5vw;
+}
+
+.cookies {
+  background-color: Moccasin;
+}
+
+@media (max-width: 700px) {
+  header nav ul     { display: none; }
+  nav select { 
+    display:flex;
+    float: left;
+    margin-left: 3px;
+  }
+  header h1 { font-size: 7vw; }
+  .FooterContent { margin-top: 55px;}
+  .coins {
+    /* top: 11vw;
+    height: 6vw; */
+    position: sticky;
+    float: left;
+    vertical-align: middle;
+    margin-top: 3px;
+    /* margin-left: 120px; */
+    margin-left: 25vw;
+  }
+
+  header {
+    background-color: purple;
+    color: white;
+    display:inline-block;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .LoginContent p {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
 }

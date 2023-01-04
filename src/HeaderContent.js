@@ -39,10 +39,30 @@ function HeaderContent(props) {
     return;
   }
 
+  var handleOptionChange = event => {
+    // console.log(event.target.selectedIndex);
+    let selectedPage = event.target.selectedIndex;
+    console.log(selectedPage);
+    switch (selectedPage) {
+      case 0:
+        props.checkClick("home");
+        break;
+      case 1:
+        break;
+      case 2:
+        props.checkClick("games");
+        break;
+      case 5:
+        handleLogout();
+      default:
+        break;
+    }
+  }
+
   return (
     <div className="HeaderContent">
       <header>
-        <h1>UnlimitedWeb</h1>
+        <h1>Unlimited Web</h1>
         <nav>
           <ul>
             <li>
@@ -70,9 +90,20 @@ function HeaderContent(props) {
               </span>
             </li>
           </ul>
+
+          <select onChange={handleOptionChange}>
+            <option value="/" selected="selected">Home</option>
+            <option value="/">News</option>
+            <option value="/">Games</option>
+            <option value="/">Community</option>
+            <option value="/">Shop</option>
+            <option value="/">Logout</option>
+          </select>
+          <p className="coins">¤ {nCoins ? nCoins : 0} &nbsp;</p>
         </nav>
+        
       </header>
-      <p className="coins">¤ {nCoins ? nCoins : 0} &nbsp;</p>
+      
     </div>
   );
 }

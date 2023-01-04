@@ -15,6 +15,9 @@ function LoginContent(props) {
     withCredentials: true,
   });
   const [statusMsg, setStatusMsg] = useState("");
+  const [regButtonStyle, setRegButtonStyle] = useState({backgroundColor: ''});
+  const [regButtonDisabled, setRegButtonDisabled] = useState(false);
+  const [inputStyle, setInputStyle] = useState({background: 'transparent'})
 
   async function logMeIn(e) {
     e.preventDefault();
@@ -36,19 +39,27 @@ function LoginContent(props) {
     }
   }
 
+
+
   async function regMe(e) {
     e.preventDefault();
     try {
-      let didWork = await regUser(userLogin.username, userLogin.password);
-      if (didWork == "yas") {
+      let regStatus = await regUser(userLogin.username, userLogin.password);
+        // setStatusMsg(() => {
+        //   return regStatus;
+        // });
+        let isSuccess = regStatus.includes("may");
+        if (isSuccess) {
+          console.log(regStatus);
+          setRegButtonStyle({cursor: 'not-allowed', backgroundColor: 'grey'});
+          setRegButtonDisabled(true);
+          setInputStyle({background: 'LightGreen'})
+        } else {
+          console.log(regStatus);
+        }
         setStatusMsg(() => {
-          return "yas";
+          return regStatus;
         });
-      } else {
-        setStatusMsg(() => {
-          return didWork;
-        });
-      }
     } catch (err) {
       console.log(err);
     }
@@ -56,6 +67,7 @@ function LoginContent(props) {
 
   function handleChange(e) {
     const { name, value } = e.target;
+    setInputStyle({background: 'transparent'})
     setUser((prevVal) => {
       return {
         ...prevVal,
@@ -67,7 +79,7 @@ function LoginContent(props) {
   return (
     <div className="LoginContent">
       <div class="login-container">
-        <h1>Welcome to UnlimitedWeb</h1>
+        <h1>Welcome to Unlimited Web</h1>
         <form>
           <label for="username">Username:</label>
           <br />
@@ -75,6 +87,7 @@ function LoginContent(props) {
             type="text"
             id="username"
             name="username"
+            style={inputStyle}
             onChange={handleChange}
           />
           <br />
@@ -84,6 +97,7 @@ function LoginContent(props) {
             type="password"
             id="password"
             name="password"
+            style={inputStyle}
             onChange={handleChange}
           />
           <br />
@@ -102,6 +116,8 @@ function LoginContent(props) {
             <input
               type="submit"
               value="Register"
+              style={regButtonStyle}
+              disabled={regButtonDisabled}
               onClick={
                 userLogin.username.trim() != "" &&
                 userLogin.password.trim() != ""
@@ -117,12 +133,11 @@ function LoginContent(props) {
         {statusMsg}
       </p>
       <p>
-        v1.0.1; Please be prepared for database, users, and coins to be deleted
+        v1.0.2; Please be prepared for database, users, and coins to be deleted
         often during Beta.
       </p>
-      <p>
-        By using Unlimited Web you agree to allow cookies to be stored on your
-        computer for app usage.
+      <p className="cookies">
+      🍪 By using Unlimited Web you agree to the storing of cookies on your device to utilize account creation, authentication, and navigation. 🕵🏽‍♀️
       </p>
     </div>
   );
