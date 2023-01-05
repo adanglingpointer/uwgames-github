@@ -1,12 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "./Styles/App.css";
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import "./LoginContent.css";
+import "./Styles/index.css";
+import "./Styles/LoginContent.css";
 import axios from "axios";
-import { regUser } from "./ApiCalls";
-import App from "./App";
+import { regUser } from "./Api/ApiCalls";
 
 function LoginContent(props) {
   const [userLogin, setUser] = useState({
@@ -21,6 +19,7 @@ function LoginContent(props) {
 
   async function logMeIn(e) {
     e.preventDefault();
+
     try {
       const response = await axios.post(
         "http://localhost:3020/login",
@@ -44,10 +43,8 @@ function LoginContent(props) {
   async function regMe(e) {
     e.preventDefault();
     try {
+      console.log("username sent to register: "+userLogin.username);
       let regStatus = await regUser(userLogin.username, userLogin.password);
-        // setStatusMsg(() => {
-        //   return regStatus;
-        // });
         let isSuccess = regStatus.includes("may");
         if (isSuccess) {
           console.log(regStatus);
@@ -65,15 +62,44 @@ function LoginContent(props) {
     }
   }
 
+  function isUppercase(letter) {
+    return letter === letter.toUpperCase();
+  }
+
+  function isNumber(str) {
+    return !isNaN(Number(str));
+  }
+
   function handleChange(e) {
     const { name, value } = e.target;
-    setInputStyle({background: 'transparent'})
-    setUser((prevVal) => {
-      return {
-        ...prevVal,
-        [name]: value,
-      };
-    });
+    
+    // only username is a controlled input (userState value==input value) so that we can manage live input
+    // prevent a space from being entered in username
+    if (userLogin.username==value.replace(/\s/g, '').trim()) {
+      console.log("equal");
+      return;
+    }
+
+    // prevent a capital letter from being entered in username
+    if (value[(value.length-1)]){
+      console.log(value[(value.length-1)]);
+      if (!isNumber(value[(value.length-1)])){
+        if (isUppercase(value[(value.length-1)])) {
+          console.log("true");
+          return;
+        }
+      }
+    }
+
+      console.log(e.target.value);
+      setInputStyle({background: 'transparent'})
+      setUser((prevVal) => {
+        return {
+          ...prevVal,
+          [name]: value,
+        };
+      });
+
   }
 
   return (
@@ -87,6 +113,7 @@ function LoginContent(props) {
             type="text"
             id="username"
             name="username"
+            value={userLogin.username}
             style={inputStyle}
             onChange={handleChange}
           />
@@ -100,7 +127,6 @@ function LoginContent(props) {
             style={inputStyle}
             onChange={handleChange}
           />
-          <br />
           <br />
           <div className="flex-me">
             <input
@@ -133,7 +159,7 @@ function LoginContent(props) {
         {statusMsg}
       </p>
       <p>
-        v1.0.2; Please be prepared for database, users, and coins to be deleted
+        v1.0.3; Please be prepared for database, users, and coins to be deleted
         often during Beta.
       </p>
       <p className="cookies">

@@ -9,7 +9,7 @@
     background-color: #FFFFFF;
     border: 2px solid #E1E1E1;
     border-radius: 5px;
-    padding: 20px;
+    padding: 16px;
     margin-top: 17vh;
   }
   
@@ -27,7 +27,7 @@
   label {
     font-size: 16px;
     color: #707070;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
   }
   
   input[type="text"], input[type="password"] {
@@ -36,7 +36,7 @@
     border: 1px solid #E1E1E1;
     border-radius: 5px;
     padding: 0 10px;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
   }
   
   input[type="submit"] {
@@ -48,7 +48,8 @@
     color: #FFFFFF;
     font-size: 16px;
     cursor: pointer;
-    margin: 6px;
+    margin-left: 6px;
+    margin-right: 6px;
   }
   
   input[type="submit"]:hover {

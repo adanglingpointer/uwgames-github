@@ -1,11 +1,9 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "../Styles/App.css";
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import "./home.css";
+import "../Styles/index.css";
+import "../Styles/home.css";
 import axios from "axios";
-import App from "./App";
 
 function HeaderContent(props) {
   var [nCoins, updateCoins] = useState(props.numCoins);

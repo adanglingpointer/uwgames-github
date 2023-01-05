@@ -11,6 +11,11 @@ The latest version of this app is always live at [https://unlimitedweb.us/](http
 
 ## Update Log
 
+- v1.0.3
+- [x] fixed login bug
+- [x] fixed layout spacing
+- [x] organized files better
+
 - v1.0.2
 - [x] mobile friendly
 - [x] highly responsive layout

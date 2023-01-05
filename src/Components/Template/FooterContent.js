@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
-import "./App.css";
+import "../Styles/App.css";
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "../Styles/index.css";
 
 function FooterContent() {
   return (

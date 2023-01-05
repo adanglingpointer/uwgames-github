@@ -1,15 +1,14 @@
-import "./App.css";
+import "./Components/Styles/App.css";
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import HomePage from "./HomePage";
-import GamesPage from "./GamesPage.js";
-import HeaderContent from "./HeaderContent";
-import FooterContent from "./FooterContent";
-import LoginContent from "./LoginContent";
-import Heli from "./Heli";
-import axios from "axios";
-import { checkLogIn, getCoins } from "./ApiCalls";
+import "./Components/Styles/index.css";
+import HomePage from "./Components/HomePage";
+import GamesPage from "./Components/Games/GamesPage.js";
+import HeaderContent from "./Components/Template/HeaderContent";
+import FooterContent from "./Components/Template/FooterContent";
+import LoginContent from "./Components/LoginContent";
+import Heli from "./Components/Games/Heli";
+import { checkLogIn, getCoins } from "./Components/Api/ApiCalls";
 
 function App() {
   var [currentPage, setCurrentPage] = useState("home");

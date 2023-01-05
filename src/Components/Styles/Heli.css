@@ -3,7 +3,7 @@
 }
 
 @media (max-width: 700px) {
-div {
+div #parcelgame {
     margin-top: 100px;
 }
 }
