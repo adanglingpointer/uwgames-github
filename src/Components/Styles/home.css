@@ -107,7 +107,7 @@ padding: 0 20px;
 }
 
 .game-box img {
-  width: 30%;
+  width: 93px;
   border: 1px solid #E1E1E1;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -179,13 +179,10 @@ nav select {
   header h1 { font-size: 7vw; }
   .FooterContent { margin-top: 55px;}
   .coins {
-    /* top: 11vw;
-    height: 6vw; */
     position: sticky;
     float: left;
     vertical-align: middle;
     margin-top: 3px;
-    /* margin-left: 120px; */
     margin-left: 25vw;
   }
 

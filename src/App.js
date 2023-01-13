@@ -33,7 +33,6 @@ function App() {
 
   //  handle navigation link clicks
   function handleClick(event) {
-    console.log("setCurrentPage "+event);
     setCurrentPage(event);
   }
 

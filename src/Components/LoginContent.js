@@ -43,16 +43,13 @@ function LoginContent(props) {
   async function regMe(e) {
     e.preventDefault();
     try {
-      console.log("username sent to register: "+userLogin.username);
       let regStatus = await regUser(userLogin.username, userLogin.password);
         let isSuccess = regStatus.includes("may");
         if (isSuccess) {
-          console.log(regStatus);
           setRegButtonStyle({cursor: 'not-allowed', backgroundColor: 'grey'});
           setRegButtonDisabled(true);
           setInputStyle({background: 'LightGreen'})
         } else {
-          console.log(regStatus);
         }
         setStatusMsg(() => {
           return regStatus;
@@ -76,13 +73,11 @@ function LoginContent(props) {
     // only username is a controlled input (userState value==input value) so that we can manage live input
     // prevent a space from being entered in username
     if (userLogin.username==value.replace(/\s/g, '').trim()) {
-      console.log("equal");
       return;
     }
 
     // prevent a capital letter from being entered in username
     if (value[(value.length-1)]){
-      console.log(value[(value.length-1)]);
       if (!isNumber(value[(value.length-1)])){
         if (isUppercase(value[(value.length-1)])) {
           console.log("true");
@@ -91,7 +86,6 @@ function LoginContent(props) {
       }
     }
 
-      console.log(e.target.value);
       setInputStyle({background: 'transparent'})
       setUser((prevVal) => {
         return {
@@ -159,7 +153,7 @@ function LoginContent(props) {
         {statusMsg}
       </p>
       <p>
-        v1.0.3; Please be prepared for database, users, and coins to be deleted
+        v1.0.4; Please be prepared for frequent changes, including database, users, and coins possibly deleted/reset through stages of development.
         often during Beta.
       </p>
       <p className="cookies">

@@ -5,6 +5,7 @@
 
 .login-container {
     width: 30%;
+    max-width: 414px;
     margin: 0 auto;
     background-color: #FFFFFF;
     border: 2px solid #E1E1E1;
@@ -40,6 +41,7 @@
   }
   
   input[type="submit"] {
+    position:relative;
     width: 100px;
     height: 35px;
     background-color: #FF9933;
@@ -48,8 +50,9 @@
     color: #FFFFFF;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 6px;
-    margin-right: 6px;
+    margin-top: 4px;
+    margin-left:auto;
+    margin-right:auto;
   }
   
   input[type="submit"]:hover {
@@ -65,12 +68,6 @@
     width: 70%;
     justify-content: space-between;
   }
-  
-  /* @media (max-width: 700px) {
-    .login-container div {
-      flex-direction: column;
-    }
-  } */
 
 #status {
     color: red;
