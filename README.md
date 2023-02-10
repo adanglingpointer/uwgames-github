@@ -11,6 +11,10 @@ The latest version of this app is always live at [https://unlimitedweb.us/](http
 
 ## Update Log
 
+- v1.0.5
+- [x] home page loads without having to login
+- [x] login/logout link change by status
+
 - v1.0.4
 - [x] prettier login
 - [x] slightly prettier games page

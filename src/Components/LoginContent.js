@@ -33,6 +33,13 @@ function LoginContent(props) {
         props.checkClick("home");
         props.changeStatus(true);
       }
+      // NEW SHIT
+      else {
+        props.setLogin(false);
+        props.checkClick("home");
+        props.changeStatus(false);
+      }
+      // END NEW
     } catch (error) {
       console.log(error);
     }
@@ -153,7 +160,7 @@ function LoginContent(props) {
         {statusMsg}
       </p>
       <p>
-        v1.0.4; Please be prepared for frequent changes, including database, users, and coins possibly deleted/reset through stages of development.
+        v1.0.5; Please be prepared for frequent changes, including database, users, and coins possibly deleted/reset through stages of development.
         often during Beta.
       </p>
       <p className="cookies">

@@ -69,7 +69,9 @@ function HeaderContent(props) {
               </span>
             </li>
             <li>
-              <a href="#">News</a>
+              <span onClick={getClick} id="home" className="nav-link">
+              News
+              </span>
             </li>
             <li>
               <span onClick={getClick} id="games" className="nav-link">
@@ -84,7 +86,7 @@ function HeaderContent(props) {
             </li>
             <li>
               <span onClick={handleLogout} id="login" className="nav-link">
-                Logout
+                {(props.isLoggedIn) ? <span>Logout</span> : <span>Login</span>}
               </span>
             </li>
           </ul>
@@ -95,7 +97,7 @@ function HeaderContent(props) {
             <option value="/">Games</option>
             <option value="/">Community</option>
             <option value="/">Shop</option>
-            <option value="/">Logout</option>
+            <option value="/">Login/out</option>
           </select>
           <p className="coins">¤ {nCoins ? nCoins : 0} &nbsp;</p>
         </nav>

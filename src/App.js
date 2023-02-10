@@ -8,6 +8,7 @@ import HeaderContent from "./Components/Template/HeaderContent";
 import FooterContent from "./Components/Template/FooterContent";
 import LoginContent from "./Components/LoginContent";
 import Heli from "./Components/Games/Heli";
+import ThemePark from "./Components/Games/ThemePark";
 import { checkLogIn, getCoins } from "./Components/Api/ApiCalls";
 
 function App() {
@@ -59,6 +60,8 @@ function App() {
       currentView = <GamesPage checkClick={handleClick} />;
     } else if (currentPage === "heli") {
       currentView = <Heli updateCoins={fetchCoins} />;
+    } else if (currentPage === "coaster") {
+      currentView = <ThemePark />;
     } else if (currentPage === "login") {
       currentView = (
         <LoginContent setLogin={logInUser} checkClick={handleClick} />
@@ -66,6 +69,15 @@ function App() {
     }
   } else if (loggedIn == false) {
     checkLogIn(changeStatus);
+    // NEW
+    if (currentPage === "home") {
+      currentView = <HomePage />;
+    } else {
+      currentView = (
+        <LoginContent setLogin={logInUser} checkClick={handleClick} />
+      );
+    }
+    // END NEW
   }
 
   return (
@@ -74,6 +86,7 @@ function App() {
         checkClick={handleClick}
         numCoins={userCoins}
         getCoins={fetchCoins}
+        isLoggedIn={loggedIn}
       />
 
       {currentView}
