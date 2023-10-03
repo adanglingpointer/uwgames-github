@@ -21,7 +21,7 @@ function HeaderContent(props) {
 
   async function doLogout() {
     try {
-      const response = await axios.get("http://localhost:3020/logout", {
+      const response = await axios.get("https://apiserve.unlimitedweb.us/logout", {
         withCredentials: true,
       });
       let { message } = response.data;

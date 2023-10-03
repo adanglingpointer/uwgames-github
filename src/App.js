@@ -69,7 +69,7 @@ function App() {
     }
   } else if (loggedIn == false) {
     checkLogIn(changeStatus);
-    // NEW
+    // NEW SHIT
     if (currentPage === "home") {
       currentView = <HomePage />;
     } else {
